@@ -45,7 +45,9 @@ fp.concat = (list1, list2) => {
 //TODO and splice using call, bind, and apply
 // the standlone functions should have the signature (array, ...args) => array
 
-fp.splice = () => {};
+fp.splice = (list, index) => {
+  return Array.prototype.splice.call(list, index);
+};
 
 
 

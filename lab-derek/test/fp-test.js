@@ -51,7 +51,14 @@ describe('concat', function(){
     expect(concatTest2).toEqual(['cat', 'bat', 'rat', 'splat']);
   });
   it('should return null if either input argument is not an array-like object', function(){
-    let filterTest3 = fp.map(true, item => item.length > 2);
-    expect(filterTest3).toBe(null);
+    let concatTest3 = fp.map(true, item => item.length > 2);
+    expect(concatTest3).toBe(null);
+  });
+});
+
+describe('splice', function(){
+  it('should accept an array-like object, an integer, and an optional array of values to add to the array and return an array of items deleted from the original array-like object. Items deleted from the object begin at the index equal to the integer provided in the second argument.', function(){
+    let spliceTest1 = fp.splice([1,2,3], 1);
+    expect(spliceTest1).toEqual([2,3]);
   });
 });
