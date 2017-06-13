@@ -28,7 +28,11 @@ fp.filter = (list, callback) => {
 //TODO reduce using call, bind, and apply
 
 fp.reduce = (list, args) => {
-  return Array.prototype.reduce.apply(list, args);
+  if(list[0])
+    return Array.prototype.reduce.apply(list, args);
+  else {
+    return null;
+  }
 };
 
 //TODO concat using call, bind, and apply
