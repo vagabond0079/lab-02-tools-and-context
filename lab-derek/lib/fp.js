@@ -17,7 +17,9 @@ fp.map = (list, callback) => {
 
 //TODO filter using call, bind, and apply
 
-
+fp.filter = (list, callback) => {
+  return Array.prototype.filter.call(list,callback);
+};
 
 //TODO reduce using call, bind, and apply
 
