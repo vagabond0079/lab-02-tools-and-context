@@ -26,7 +26,7 @@ describe('filter', function(){
     expect(filterTest2).toEqual([3]);
   });
   it('should return null for input arguments that are not an array-like object', function(){
-    let filterTest3 = fp.map(true, item => item.length > 2);
+    let filterTest3 = fp.filter(true, item => item.length > 2);
     expect(filterTest3).toBe(null);
   });
 });
@@ -37,7 +37,7 @@ describe('reduce', function(){
     expect(reduceTest1).toEqual(6);
   });
   it('should return null for input arguments that are not an array-like object', function(){
-    let filterTest3 = fp.map(true, item => item.length > 2);
+    let filterTest3 = fp.reduce(true, [(a,c) => a+c, 0]);
     expect(filterTest3).toBe(null);
   });
 });
@@ -51,14 +51,25 @@ describe('concat', function(){
     expect(concatTest2).toEqual(['cat', 'bat', 'rat', 'splat']);
   });
   it('should return null if either input argument is not an array-like object', function(){
-    let concatTest3 = fp.map(true, item => item.length > 2);
+    let concatTest3 = fp.concat(true, ['rat', 'splat']);
     expect(concatTest3).toBe(null);
   });
 });
 
 describe('splice', function(){
-  it('should accept an array-like object, an integer, and an optional array of values to add to the array and return an array of items deleted from the original array-like object. Items deleted from the object begin at the index equal to the integer provided in the second argument.', function(){
-    let spliceTest1 = fp.splice([1,2,3], 1);
+  it('should accept an array-like object and a second array of arguments, [two integers and any optional values to add to the array] and return an array of items deleted from the original array-like object. Items deleted from the object begin at the index equal to the integer provided in the second argument.', function(){
+    let spliceTest1 = fp.splice([1,2,3], [1]);
     expect(spliceTest1).toEqual([2,3]);
+
+    let spliceTest2 = fp.splice([1,2,3], [1, 1]);
+    expect(spliceTest2).toEqual([2]);
+  });
+  it('should return null if the first input argument is not an array-like object', function(){
+    let spliceTest3 = fp.splice(true, [1, 1]);
+    expect(spliceTest3).toBe(null);
+  });
+  it('should return null if the 0 index of the second input argument is not a number', function(){
+    let spliceTest4 = fp.splice([1,2,3], [true, 1]);
+    expect(spliceTest4).toBe(null);
   });
 });
