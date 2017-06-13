@@ -20,9 +20,8 @@ fp.map = (list, callback) => {
 fp.filter = (list, callback) => {
   if(list[0])
     return Array.prototype.filter.call(list,callback);
-  else {
+  else
     return null;
-  }
 };
 
 //TODO reduce using call, bind, and apply
@@ -30,14 +29,18 @@ fp.filter = (list, callback) => {
 fp.reduce = (list, args) => {
   if(list[0])
     return Array.prototype.reduce.apply(list, args);
-  else {
+  else
     return null;
-  }
 };
 
 //TODO concat using call, bind, and apply
 
-fp.concat = () => {};
+fp.concat = (list1, list2) => {
+  if(list1[0] && list2[0])
+    return Array.prototype.concat.call(list1, list2);
+  else
+    return null;
+};
 
 //TODO and splice using call, bind, and apply
 // the standlone functions should have the signature (array, ...args) => array
