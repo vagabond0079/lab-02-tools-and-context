@@ -2,9 +2,18 @@
 
 // TODO create stand alone map using call, bind, and apply
 
-// function map(list, callback){
-//   return Array.prototype.map.call(list, callback);
-// }
+const fp = module.exports = {};
+
+// fp.map = (list, callback) => {
+//     return Array.prototype.map.call(list, callback);
+// };
+
+fp.map = (list, callback) => {
+  if(list[0])
+    return Array.prototype.map.call(list, callback);
+  else
+    return null;
+};
 
 //TODO filter using call, bind, and apply
 
