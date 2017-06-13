@@ -1,0 +1,27 @@
+'use strict';
+
+// TODO create stand alone map using call, bind, and apply
+
+
+
+//TODO filter using call, bind, and apply
+
+
+
+//TODO reduce using call, bind, and apply
+
+
+//TODO concat using call, bind, and apply
+
+
+//TODO and splice using call, bind, and apply
+// the standlone functions should have the signature (array, ...args) => array
+
+
+
+
+
+
+
+
+// make a CLI index.js that will use your new map function to UpperCase all command line args and print them to the screen
