@@ -21,9 +21,16 @@ describe('filter', function(){
   it('should accept an array-like object of comma separated values and a filtering condition, and return a new array of each value which meets the condition', function(){
     let filterTest1 = fp.filter(['a', 'an', 'the'], item => item.length > 2);
     expect(filterTest1).toEqual(['the']);
+
+    let filterTest2 = fp.filter([1,2,3], n => n>2);
+    expect(filterTest2).toEqual([3]);
+  });
+  it('should throw an error for input arguments that are not an array-like object of comma separated values', function(){
+    let filterTest3 = fp.map(true, item => item.length > 2);
+    expect(filterTest3).toBe(null);
   });
 });
 
-// 
+//
 // ['a', 'an', 'the'].filter(function(word){
 // return word.length<4;});
