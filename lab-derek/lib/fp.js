@@ -27,14 +27,18 @@ fp.filter = (list, callback) => {
 
 //TODO reduce using call, bind, and apply
 
+fp.reduce = (list, args) => {
+  return Array.prototype.reduce.apply(list, args);
+};
 
 //TODO concat using call, bind, and apply
 
+fp.concat = () => {};
 
 //TODO and splice using call, bind, and apply
 // the standlone functions should have the signature (array, ...args) => array
 
-
+fp.splice = () => {};
 
 
 
