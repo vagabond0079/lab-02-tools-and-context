@@ -2,7 +2,9 @@
 
 // TODO create stand alone map using call, bind, and apply
 
-
+// function map(list, callback){
+//   return Array.prototype.map.call(list, callback);
+// }
 
 //TODO filter using call, bind, and apply
 
