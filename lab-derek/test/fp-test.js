@@ -2,6 +2,7 @@
 
 const fp = require('../lib/fp.js');
 const expect = require('expect');
+const index = require('../index.js');
 
 describe('map', function(){
   it('should accept an array-like object and a callback function and return a new array of each value as modified by the callback', function(){
@@ -71,5 +72,13 @@ describe('splice', function(){
   it('should return null if the 0 index of the second input argument is not a number', function(){
     let spliceTest4 = fp.splice([1,2,3], [true, 1]);
     expect(spliceTest4).toBe(null);
+  });
+});
+
+describe('main', function(){
+  it('should accept any input and print it to the CLI in uppercase when node is invoked on the CLI', function(){
+    let mainTest1 = index.main();
+    expect(mainTest1).toEqual(
+      process.argv.map(n => n.toUpperCase()));
   });
 });
