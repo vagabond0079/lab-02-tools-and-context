@@ -1,35 +1,7 @@
-![cf](https://i.imgur.com/7v5ASc8.png) lab-02-tools-and-context
-======
+# Lab-Derek README
 
-## To Submit this Assignment
-  * fork this repository & create a new branch for your work
-  * write all of your code in a directory named `lab-` + `<your name>` **e.g.** `lab-duncan`
-  * push to your repository
-  * submit a pull request to this repository
-  * submit a link to your PR in canvas
-  * write a question and observation on canvas
+This module creates six functions. Five that allow the array methods map, filter, reduce, concat, and splice to be used on any array-like object which has index values (including strings!) -- found on fp.js -- and one that prints all node bash echos in uppercase -- found on index.js.
 
-## Directions
-* make a lib and test directory
-* add your own .`gitignore`
-* include a `package.json`
-* include the standard .eslintrc
-* make a lint script for running eslint
-* make a test script for running mocha
-* make a `lib/fp.js` for holding the following methods
-  * create stand alone `map`, `filter`, `reduce`, `concat`, and `splice` using  call, bind, and apply 
-  * the standlone functions should have the signature `(array, ...args) => array`
-* make a CLI `index.js` that will use your new `map` function to UpperCase all command line args and print them to the screen
+It was a good exercise in test-driven development, forcing me to think through precisely what each of these array methods do and what arguments they accept. It also gave me some good practice working with process.argv in the CLI.
 
-# Tests
-* Write two tests for each method in `lib/fp.js`
-
-## Bonus 1pt 
-* Test your CLI index.js 
-
-## Rubric:
-* Correct Submission: 2pts
-* Passes eslint: 2Pts
-* Package.json: 3pts
-* Scripts & Tests: 3pts
-* Stretch: 2pts 
+I won't explain what fp.map, fp.filter, etc. do as it should be self-explanatory -- they accept the same inputs as their counterparts on the Array.prototype and you can consult the docs for those.
